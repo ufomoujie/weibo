@@ -24,13 +24,18 @@ class SessionsController extends Controller
             'password' => 'パスワード'
         ]
         );
-        if (Auth::attempt($credentials)) {
+        if (Auth::attempt($credentials, $request->has('remeber'))) {
             session()->flash('success', 'welcome you have logined');
             return redirect()->route('users.show', [Auth::user()]);
         } else {
             session()->flash('danger', 'sorry not found user or passwrod wrong');
             return redirect()->back()->withInput();
         }
-        return;
+    }
+
+    public function destroy() {
+        Auth::logout();
+        session()->flash('success', 'logout success!');
+        return redirect()->route('login');
     }
 }

@@ -22,6 +22,13 @@
             <input id="password" type="password" name="password" class="form-control" value="{{ old('password') }}" >
           </div>
 
+          <div class="form-group">
+            <div class="form-check">
+              <input type="checkbox" class="form-check-input" name="remember" id="remember1">
+              <label class="form-check-label" for="remember1">remember me</label>
+            </div>
+          </div>
+
           <button type="submit" class="btn btn-primary">login</button>
         </form>
         <hr>
