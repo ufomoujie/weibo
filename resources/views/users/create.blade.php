@@ -8,6 +8,7 @@
         <h5>sign up</h5>
       </div>
       <div class="card-body">
+        @include('shared._errors')
         <form method="post" action=" {{ route('users.store') }}">
           {{ csrf_field() }}
           <div class="form-group">
@@ -22,12 +23,12 @@
 
           <div class="form-group">
             <label for="password">password: </label>
-            <input id="password" type="text" name="password" class="form-control" value="{{ old('password') }}" >
+            <input id="password" type="password" name="password" class="form-control" value="{{ old('password') }}" >
           </div>
 
           <div class="form-group">
             <label for="password_confirmation">password_confirmation: </label>
-            <input id="password_confirmation" type="text" name="password_confirmation" class="form-control" value="{{ old('password_confirmation') }}" >
+            <input id="password_confirmation" type="password" name="password_confirmation" class="form-control" value="{{ old('password_confirmation') }}" >
           </div>
 
           <button type="submit" class="btn btn-primary">sign up</button>
