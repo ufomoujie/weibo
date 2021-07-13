@@ -45,7 +45,8 @@ class UsersController extends Controller
             [],
             [
                 'name' => 'お名前',
-                'password' => 'パスワード'
+                'password' => 'パスワード',
+                'email' => 'メールアドレス'
             ]
         );
         $user = User::create([
