@@ -15,5 +15,4 @@
       {!! $users->render() !!}
     </div>
   </div>
-
 @stop
